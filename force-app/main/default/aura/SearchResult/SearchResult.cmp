@@ -1,0 +1,29 @@
+<aura:component controller="SearchResultController">
+    <aura:attribute name="searchResults" type="List"/>
+    <aura:attribute name="title" type="String"/>
+    <aura:method name="search">
+        <aura:attribute name="strTitle" type="String"/>
+    </aura:method>
+    <aura:if isTrue="{!not(empty(v.searchResults))}">
+        <div style="background:orange" aura:id="dform">
+            <table class="slds-table--bordered">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Account Name</th>
+                        <th>Approvar Name</th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.searchResults}" var="s">
+                        <tr>
+                            <td>{!s.Title__c}</td>
+                            <td>{!s.Account_Name__r.Name}</td>
+                            <td>{!s.Approver_Name__r.Name}</td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </aura:if>
+</aura:component>

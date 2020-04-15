@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="formData" type="Map" default="{}"/>
+    <lightning:input name="firstname" label="FirstName" value="{!v.formData.firstName}"/>
+    <lightning:input name="lastname" label="LastName" value="{!v.formData.lastName}"/>
+    <lightning:button name="Submit" label="Create Lead" onclick="{!c.createLead}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.checkBrowser}"/>
+</aura:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isDependent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>To identify whether the next question is dependent on the current option</description>
+    <externalId>false</externalId>
+    <label>isDependent</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

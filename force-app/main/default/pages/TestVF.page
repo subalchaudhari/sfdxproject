@@ -1,0 +1,31 @@
+<apex:page showHeader="false" sidebar="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script>
+        function resizeIframe(obj) {
+            console.log('autoHeight: ' +obj.contentWindow.document.body.offsetHeight);
+            //obj.style.height = obj.contentWindow.document.body.scrollHeight+'px';
+            var iframe = window.parent.document.getElementById('theIframe');
+            console.log('iframe height: '+iframe.contentWindow.document.body.scrollHeight);
+            var container = window.parent.document.getElementById('ltd');
+            console.log('Iframe content : '+ container);
+            obj.style.height ='500px';
+        }
+        </script>
+    </head>
+    
+    <p>
+        Hello {!$User.UIThemeDisplayed}
+    </p>
+    <div id="subal" style ="background-color: lightblue;">
+        <p>
+            This is parent content
+        </p>
+    </div>
+    
+    <!-- <iframe src="https://labsu-developer-edition.ap4.force.com/iframePOC/callme" width="100%" onload="resizeIframe(this)" frameborder="0" scrolling="yes"  id="theIframe"/>  -->      
+    
+    <p>
+        End of Iframe
+    </p>
+</apex:page>

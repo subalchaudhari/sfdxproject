@@ -1,0 +1,44 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" controller="AccountApprovalController">
+    <aura:attribute name="Title" type="String"/>
+    <aura:attribute Name="selAccount" type="object"  access="public" />
+    <aura:attribute Name="selAprovar" type="object"  access="public" />
+    <div class="slds-form slds-form_compound">
+        <fieldset class="slds-form-element">
+            <legend class="slds-form-element__label slds-form-element__legend slds-text-title_caps">Account Approval </legend>
+            <div class="slds-form-element__group">
+                <div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_1-of-2">
+                        <lightning:input name="Title" label="Title" value="{!v.Title}"/>
+                    </div>
+                </div>
+                <div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_1-of-2">
+                        <label class="slds-form-element__label" required="true"
+ for="input-02">Account Name</label>
+                        <c:Autocomplete objectName="Account" 
+                                        field_API_text="Name"
+                                        field_API_val="Id"
+                                        field_API_search="Name"
+                                        selItem="{!v.selAccount}" 
+                                        placeholder="Enter text to search Account"/>
+                    </div>                    
+                </div>
+                <div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_1-of-2">
+                        <label class="slds-form-element__label" for="input-02">Approar Name</label>
+                        <c:Autocomplete objectName="User" 
+                                        field_API_text="Name"
+                                        field_API_val="Id"
+                                        field_API_search="Name"
+                                        selItem="{!v.selAprovar}" 
+                                        placeholder="Enter text to search User"/>
+                    </div>
+                </div>
+                
+            </div>
+        </fieldset>
+        <lightning:button label="Submit" variant="brand" onclick="{!c.saveRecord}"/>
+    </div>
+    
+    
+</aura:component>

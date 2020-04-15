@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="title" type="String"/>
+    <aura:registerEvent name="formSubmit" type="c:SearchFormEvent"/>
+    
+    <lightning:layout class="slds-wrap" horizontalAlign="center" verticalAlign="end">
+    	<lightning:layoutItem>
+            <lightning:input name="title" label="Title" value="{!v.title}" placeholder="Enter title to search.."/>
+        </lightning:layoutItem>
+        <lightning:layoutItem>
+            <lightning:button name="Search" label="Search" variant="brand" onclick="{!c.onFormSubmit}"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

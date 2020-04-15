@@ -1,0 +1,4 @@
+<aura:component >
+    <p>hellow</p>
+    <iframe src="https://labsu-developer-edition.ap4.force.com/callme"/>
+</aura:component>

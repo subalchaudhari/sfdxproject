@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SurveyQue_choice_cannot_be_blank</fullName>
+    <active>true</active>
+    <description>Survey question choice cannot be blank if isDependent field is true</description>
+    <errorConditionFormula>AND( isDependent__c , ISBLANK( SurveyQuestionChoice__c ) )</errorConditionFormula>
+    <errorMessage>Survey Question Choice is mandatory when isDependent is true</errorMessage>
+</ValidationRule>

@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="SurveyController">
+    <aura:attribute name="surveyHistory" type="list"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="surveyId" type="String"/>
+    <aura:attribute name="optionSeletedForRadio" type="String"/>
+    <aura:attribute name="optionSeletedForCheckbox" type="List"/>
+    <aura:attribute name="inputTextResp" type="String"/>
+    <aura:attribute name="currentQuestion" type="object"/>
+    <aura:attribute name="lastQuestionIds" type="List"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    
+    <div class="slds-align_absolute-center" 
+         style="padding:20px;">
+        <lightning:button name="Start Survey" label="Take New Survey" variant="brand" onclick="{!c.startSurvey}"/><br/><br/>
+        <aura:if isTrue="{!not(empty(v.surveyHistory))}">
+            <br/>
+            <div>
+                <h1>Records fetched succesfully..!!!</h1>
+            </div>
+            <aura:set attribute="else">
+                <br/>
+                <div>
+                <h1>No Survey Taken.Please click on "Take New Survey"</h1>
+                </div>
+            </aura:set>    
+        </aura:if>        
+    </div><br/>
+    <div aura:id="dtag"  style="padding-left:200px;" >
+        {!v.body}
+    </div>
+</aura:component>

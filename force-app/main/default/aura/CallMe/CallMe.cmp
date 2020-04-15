@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="phonenumber" type="double" default="9833276221"/>
+    <aura:attribute name="email" type="String" default="subalchaudhari@gmail.com"/>
+	<div class="slds-align--absolute-center btnstyle"> 
+        <a href="{!concat('tel:',v.phonenumber)}">
+    <img src="{!$Resource.callme}"></img>
+         </a>
+    </div>
+    <div class="slds-align--absolute-center">
+    <a href="{!concat('mailto:',v.email)}">
+    <p>Email to HQ</p>    
+    </a>
+    </div>
+</aura:component>

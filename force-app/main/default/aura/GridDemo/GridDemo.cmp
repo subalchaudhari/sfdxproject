@@ -1,0 +1,39 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="resp" type="String"/>
+    <p>Theam--> {!$User.UIThemeDisplayed}</p>
+    <lightning:button label="Call Server" onclick="{!c.callServer}"/>
+    <aura:if isTrue ="{!v.resp != null}">
+    		<p>{!v.resp}</p>
+        <aura:set attribute="else">
+        	<p>Click on button to call sever</p>
+        </aura:set>
+    </aura:if>
+    <lightning:layout class="slds-wrap">
+        <lightning:layoutItem size="12">
+            <div style="background:yellow">
+                <c:CallMe />
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6" smallDeviceSize="12"
+                              mediumDeviceSize="8"
+                              largeDeviceSize="4">
+            <div style="background:aqua">
+                <c:CallMe />
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6" smallDeviceSize="12"
+                              mediumDeviceSize="4"
+                              largeDeviceSize="8">
+            <div style="background:lime">
+                <c:CallMe />
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12">
+            <div style="background:orange">
+                <c:CallMe />
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+</aura:component>

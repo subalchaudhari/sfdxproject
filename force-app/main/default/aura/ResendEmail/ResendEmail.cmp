@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="link" type="String"/>
+    <lightning:button name="Resend Email" label="Resend Email" onclick="{!c.resendEmail}"/>
+</aura:component>

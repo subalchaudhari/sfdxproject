@@ -1,0 +1,17 @@
+<apex:page showHeader="false" sidebar="false">
+      <apex:includeLightning />
+    <div id="ltd">
+        <p>
+            Hello from Lightning
+        </p>
+    </div>
+     <!-- <script src="/lightning/lightning.out.js"></script> -->
+    <script>
+                
+        $Lightning.use("c:vfPageApp",function(){
+        $Lightning.createComponent("c:GridDemo","","ltd");    
+        });
+        
+    console.log('parent element: ' +parent.document.getElementById('subal').innerHTML);
+        </script>
+</apex:page>
